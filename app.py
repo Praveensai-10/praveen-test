@@ -4,7 +4,7 @@ from datetime import datetime
 import pytz
 import subprocess
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 @app.route('/htop')
 def htop():
@@ -22,5 +22,5 @@ def htop():
     # Render the index.html template with data
     return render_template('index.html', name=full_name, username=system_username, server_time=server_time, top_output=top_output)
 
-if _name_ == '_main_':
+if __name__ == '_main_':
     app.run(host='0.0.0.0')
